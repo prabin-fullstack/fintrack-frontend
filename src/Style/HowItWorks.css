@@ -1,0 +1,302 @@
+/* ── HowItWorks.css ── */
+
+.hiw-root {
+  background: var(--nm-bg);
+  font-family: 'Inter', sans-serif;
+  padding: 56px 28px 48px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.hiw-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.hiw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nm-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hiw-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nm-accent);
+  box-shadow: 0 0 6px rgba(99,102,241,0.5);
+}
+
+.hiw-heading {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--nm-text);
+  line-height: 1.2;
+}
+
+.hiw-heading span {
+  color: var(--nm-accent);
+}
+
+.hiw-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--nm-muted);
+  max-width: 420px;
+}
+
+/* ── Steps row — flex so card+connector order is predictable ── */
+.hiw-steps {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;        /* cards all same height */
+  gap: 0;
+}
+
+/* ── Connector between cards ── */
+.hiw-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  gap: 4px;
+  padding-bottom: 60px;        /* visually centred relative to icon area */
+}
+
+.hiw-connector-line {
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(99,102,241,0.25),
+    rgba(99,102,241,0.6),
+    rgba(99,102,241,0.25)
+  );
+  border-radius: 1px;
+}
+
+.hiw-connector-arrow {
+  font-size: 13px;
+  color: var(--nm-accent);
+  opacity: 0.55;
+}
+
+/* ── Card ── */
+.hiw-card {
+  flex: 1;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 20px;
+  padding: 28px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: box-shadow 0.25s;
+  min-width: 0;                /* prevent flex blowout */
+}
+
+.hiw-card:hover {
+  box-shadow: 10px 10px 22px #c5c8d4, -10px -10px 22px #ffffff;
+}
+
+/* ── Step pill ── */
+.hiw-step-num {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: var(--nm-accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(99,102,241,0.35);
+}
+
+/* ── Icon ── */
+.hiw-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--nm-accent);
+  transition: box-shadow 0.2s;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.hiw-card:hover .hiw-icon-wrap {
+  box-shadow: var(--nm-inset);
+}
+
+/* ── Text ── */
+.hiw-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nm-text);
+  line-height: 1.3;
+}
+
+.hiw-card-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--nm-muted);
+  flex: 1;                     /* pushes pills to bottom */
+}
+
+/* ── Pills ── */
+.hiw-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.hiw-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--nm-text);
+  white-space: nowrap;
+}
+
+.hiw-pill i {
+  font-size: 11px;
+  color: var(--nm-accent);
+}
+
+/* ── Bottom CTA ── */
+.hiw-cta-row {
+  margin-top: 40px;
+}
+
+.hiw-cta-card {
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 18px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hiw-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hiw-cta-text strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nm-text);
+}
+
+.hiw-cta-text span {
+  font-size: 13px;
+  color: var(--nm-muted);
+}
+
+.hiw-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-accent);
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 4px 4px 10px rgba(99,102,241,0.35),
+              -2px -2px 8px rgba(99,102,241,0.15);
+  transition: transform 0.1s, box-shadow 0.1s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hiw-btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 860px) {
+  .hiw-steps {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hiw-connector {
+    display: none;
+  }
+
+  /* vertical fade line between stacked cards */
+  .hiw-card:not(:last-of-type)::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 24px;
+    background: linear-gradient(to bottom, rgba(99,102,241,0.4), transparent);
+    margin: 14px auto 0;
+    border-radius: 1px;
+  }
+
+  .hiw-cta-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hiw-root {
+    padding: 40px 14px 36px;
+  }
+
+  .hiw-header {
+    margin-bottom: 36px;
+  }
+
+  .hiw-card {
+    padding: 24px 18px 20px;
+  }
+
+  .hiw-cta-card {
+    padding: 20px 18px;
+  }
+}

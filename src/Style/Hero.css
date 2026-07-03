@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  --nm-bg:       #e8eaf0;
+  --nm-dark:     #c5c8d4;
+  --nm-light:    #ffffff;
+  --nm-text:     #2d3158;
+  --nm-muted:    #8b90ad;
+  --nm-accent:   #6366f1;
+
+  --nm-raised:    7px 7px 16px #c5c8d4, -7px -7px 16px #ffffff;
+  --nm-raised-sm: 4px 4px 10px #c5c8d4, -4px -4px 10px #ffffff;
+  --nm-inset:     inset 4px 4px 10px #c5c8d4, inset -4px -4px 10px #ffffff;
+}
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nm-root {
+  background: var(--nm-bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--nm-text);
+  min-height: 100vh;
+  padding: 32px 28px;
+}
+
+/* ── Split Layout ── */
+.nm-split {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Left Column ── */
+.nm-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 16px;
+}
+
+/* ── Badge ── */
+.nm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 20px;
+  padding: 6px 14px;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nm-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nm-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.5);
+}
+
+/* ── Title ── */
+.nm-title {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--nm-text);
+}
+
+.nm-title span {
+  color: var(--nm-accent);
+}
+
+/* ── Subtitle ── */
+.nm-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--nm-muted);
+  max-width: 480px;
+}
+
+/* ── CTA Buttons ── */
+.nm-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nm-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-accent);
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 4px 4px 10px rgba(99, 102, 241, 0.35),
+              -2px -2px 8px rgba(99, 102, 241, 0.15);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.nm-btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: var(--nm-inset);
+}
+
+.nm-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-bg);
+  color: var(--nm-text);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: var(--nm-raised-sm);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.nm-btn-ghost:active {
+  transform: scale(0.97);
+  box-shadow: var(--nm-inset);
+}
+
+/* ── Stats Strip ── */
+.nm-stats {
+  display: flex;
+  gap: 0;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 16px;
+  padding: 18px 24px;
+  width: fit-content;
+}
+
+.nm-stat-group {
+  display: flex;
+  align-items: center;
+}
+
+.nm-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 20px;
+}
+
+.nm-stat-group:first-child .nm-stat {
+  padding-left: 0;
+}
+
+.nm-stat-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(197, 200, 212, 0.5);
+}
+
+.nm-stat-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--nm-text);
+  letter-spacing: -0.02em;
+}
+
+.nm-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nm-muted);
+  font-weight: 500;
+}
+
+/* ── Right Panel ── */
+.nm-right {
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nm-panel-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nm-muted);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ── Feature Grid ── */
+.nm-feat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.nm-feat-card {
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.nm-feat-card:hover {
+  box-shadow: var(--nm-raised);
+}
+
+.nm-feat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--nm-accent);
+  transition: box-shadow 0.2s;
+}
+
+.nm-feat-card:hover .nm-feat-icon {
+  box-shadow: var(--nm-inset);
+}
+
+.nm-feat-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--nm-text);
+}
+
+.nm-feat-desc {
+  font-size: 11px;
+  color: var(--nm-muted);
+  line-height: 1.5;
+}
+
+/* ── Divider ── */
+.nm-divider {
+  height: 1px;
+  background: rgba(197, 200, 212, 0.45);
+  margin: 18px 0;
+}
+
+/* ── Panel Footer ── */
+.nm-cta-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nm-cta-panel-text {
+  font-size: 12px;
+  color: var(--nm-muted);
+}
+
+.nm-cta-panel-text strong {
+  color: var(--nm-text);
+  font-weight: 600;
+}
+
+/* ── Chip / Badge ── */
+.nm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .nm-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nm-root {
+    padding: 20px 14px;
+  }
+
+  .nm-feat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nm-stats {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

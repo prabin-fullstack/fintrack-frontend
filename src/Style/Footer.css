@@ -1,0 +1,368 @@
+/* ── Footer.css ── */
+
+.fo-root {
+  background: var(--nm-bg);
+  font-family: 'Inter', sans-serif;
+  padding: 0 28px 28px;
+}
+
+.fo-inner {
+  max-width: 100vw;
+  margin: 0 auto;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 24px;
+  padding: 48px 44px 32px;
+}
+
+/* ── Top row ── */
+.fo-top {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Brand column ── */
+.fo-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fo-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.fo-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nm-accent);
+  font-size: 18px;
+  transition: box-shadow 0.2s;
+}
+
+.fo-brand:hover .fo-brand-icon {
+  box-shadow: var(--nm-inset);
+}
+
+.fo-brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--nm-text);
+  letter-spacing: -0.02em;
+}
+
+.fo-tagline {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--nm-muted);
+  margin: 0;
+}
+
+/* ── Social buttons ── */
+.fo-socials {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fo-social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--nm-muted);
+  text-decoration: none;
+  transition: box-shadow 0.2s, color 0.2s;
+}
+
+.fo-social-btn:hover {
+  box-shadow: var(--nm-raised);
+  color: var(--nm-accent);
+}
+
+.fo-social-btn:active {
+  box-shadow: var(--nm-inset);
+}
+
+/* ── Link columns ── */
+.fo-link-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.fo-col-heading {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nm-text);
+  margin-bottom: 14px;
+}
+
+.fo-col-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.fo-link {
+  font-size: 13px;
+  color: var(--nm-muted);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.18s;
+  display: inline-block;
+}
+
+.fo-link:hover {
+  color: var(--nm-accent);
+}
+
+/* ── Divider ── */
+.fo-divider {
+  height: 1px;
+  background: rgba(197,200,212,0.45);
+  margin: 32px 0;
+}
+
+/* ── Stats strip ── */
+.fo-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+.fo-stat-group {
+  display: flex;
+  align-items: center;
+}
+
+.fo-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0 28px;
+}
+
+.fo-stat-group:first-child .fo-stat {
+  padding-left: 0;
+}
+
+.fo-stat-sep {
+  width: 1px;
+  height: 28px;
+  background: rgba(197,200,212,0.5);
+  flex-shrink: 0;
+}
+
+.fo-stat-val {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--nm-text);
+  letter-spacing: -0.02em;
+}
+
+.fo-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nm-muted);
+  font-weight: 500;
+}
+
+/* ── Bottom bar ── */
+.fo-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fo-copy {
+  font-size: 12.5px;
+  color: var(--nm-muted);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fo-heart {
+  font-size: 12px;
+  color: #dc2626;
+}
+
+.fo-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fo-bottom-link {
+  font-size: 12px;
+  color: var(--nm-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+
+.fo-bottom-link:hover {
+  color: var(--nm-accent);
+}
+
+.fo-bottom-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--nm-dark);
+  opacity: 0.5;
+}
+
+/* ── Status indicator ── */
+.fo-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--nm-muted);
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+
+.fo-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 6px rgba(22,163,74,0.5);
+  animation: fo-pulse 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes fo-pulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(22,163,74,0.5); }
+  50%       { box-shadow: 0 0 12px rgba(22,163,74,0.85); }
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 900px) {
+  .fo-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .fo-brand-col {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fo-root {
+    padding: 0 14px 20px;
+  }
+
+  .fo-inner {
+    padding: 36px 22px 24px;
+    border-radius: 18px;
+  }
+
+  .fo-link-cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  .fo-stats {
+    justify-content: flex-start;
+  }
+
+  .fo-stat {
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .fo-stat-group:first-child .fo-stat {
+    padding-left: 0;
+  }
+
+  .fo-stat-val {
+    font-size: 16px;
+  }
+
+  .fo-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .fo-link-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .fo-stat-sep {
+    display: none;
+  }
+
+  .fo-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .fo-stat-group {
+    padding: 0;
+  }
+
+  .fo-stat {
+    padding: 0;
+  }
+}
+
+
+.fo-link--btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.fo-link--btn:focus-visible {
+  text-decoration: underline;
+}

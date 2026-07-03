@@ -1,0 +1,299 @@
+/* ── Features.css ── */
+
+.ft-root {
+  background: var(--nm-bg);
+  font-family: 'Inter', sans-serif;
+  padding: 56px 28px 48px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.ft-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ft-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nm-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ft-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nm-accent);
+  box-shadow: 0 0 6px rgba(99,102,241,0.5);
+}
+
+.ft-heading {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--nm-text);
+  line-height: 1.2;
+}
+
+.ft-heading span {
+  color: var(--nm-accent);
+}
+
+.ft-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--nm-muted);
+  max-width: 400px;
+}
+
+/* ── Feature list ── */
+.ft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Single feature row ── */
+.ft-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 24px;
+  padding: 36px;
+  transition: box-shadow 0.25s;
+}
+
+.ft-row:hover {
+  box-shadow: 10px 10px 24px #c5c8d4, -10px -10px 24px #ffffff;
+}
+
+/* flip on odd rows */
+.ft-row--reverse {
+  direction: rtl;
+}
+
+.ft-row--reverse > * {
+  direction: ltr;
+}
+
+/* ── Visual panel ── */
+.ft-visual {
+  border-radius: 18px;
+  background: var(--ft-light, rgba(99,102,241,0.08));
+  box-shadow: var(--nm-inset);
+  padding: 36px 28px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.ft-visual-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.ft-visual-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--ft-accent, var(--nm-accent));
+}
+
+.ft-visual-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ft-accent, var(--nm-accent));
+  margin-top: 4px;
+}
+
+.ft-visual-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--nm-text);
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* decorative neumorphic blobs */
+.ft-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--nm-bg);
+  opacity: 0.55;
+}
+
+.ft-blob--tl {
+  width: 80px;
+  height: 80px;
+  top: -24px;
+  right: -20px;
+  box-shadow: var(--nm-raised-sm);
+}
+
+.ft-blob--br {
+  width: 48px;
+  height: 48px;
+  bottom: -14px;
+  left: -14px;
+  box-shadow: var(--nm-raised-sm);
+}
+
+/* ── Text content ── */
+.ft-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ft-content-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ft-content-tag i {
+  font-size: 14px;
+}
+
+.ft-content-title {
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--nm-text);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.ft-content-desc {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--nm-muted);
+  margin: 0;
+}
+
+/* ── Feature points ── */
+.ft-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.ft-point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--nm-text);
+}
+
+.ft-point-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+
+/* Tablet — single column, no flip */
+@media (max-width: 860px) {
+  .ft-row {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+
+  .ft-row--reverse {
+    direction: ltr;
+  }
+
+  .ft-visual {
+    min-height: 160px;
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ft-root {
+    padding: 40px 14px 36px;
+  }
+
+  .ft-header {
+    margin-bottom: 40px;
+  }
+
+  .ft-list {
+    gap: 20px;
+  }
+
+  .ft-row {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .ft-visual {
+    min-height: 140px;
+    padding: 22px 18px;
+  }
+
+  .ft-visual-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .ft-content-title {
+    font-size: 16px;
+  }
+
+  .ft-content-desc {
+    font-size: 13px;
+  }
+
+  .ft-point {
+    font-size: 12.5px;
+  }
+}

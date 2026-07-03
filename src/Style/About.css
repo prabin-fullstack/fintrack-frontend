@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Reuse the same design tokens ── */
+:root {
+  --nm-bg:       #e8eaf0;
+  --nm-dark:     #c5c8d4;
+  --nm-light:    #ffffff;
+  --nm-text:     #2d3158;
+  --nm-muted:    #8b90ad;
+  --nm-accent:   #6366f1;
+
+  --nm-raised:    7px 7px 16px #c5c8d4, -7px -7px 16px #ffffff;
+  --nm-raised-sm: 4px 4px 10px #c5c8d4, -4px -4px 10px #ffffff;
+  --nm-inset:     inset 4px 4px 10px #c5c8d4, inset -4px -4px 10px #ffffff;
+}
+
+/* ── Base (mirrors nm-root) ── */
+.ab-root {
+  background: var(--nm-bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--nm-text);
+  min-height: 100vh;
+  padding: 32px 28px;
+}
+
+/* ── Layout (mirrors nm-split) ── */
+.ab-split {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Left column ── */
+.ab-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 16px;
+}
+
+/* ─────────────────────────────
+   TIMELINE
+───────────────────────────── */
+.ab-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ab-tl-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.ab-tl-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 52px;
+}
+
+.ab-tl-year {
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 10px;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--nm-accent);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.ab-tl-line {
+  width: 2px;
+  flex: 1;
+  min-height: 28px;
+  background: linear-gradient(to bottom, var(--nm-accent), transparent);
+  opacity: 0.25;
+  margin: 6px 0;
+}
+
+.ab-tl-body {
+  padding-bottom: 24px;
+  padding-top: 4px;
+}
+
+.ab-tl-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nm-text);
+  margin-bottom: 4px;
+}
+
+.ab-tl-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--nm-muted);
+}
+
+/* ─────────────────────────────
+   TEAM
+───────────────────────────── */
+.ab-team {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ab-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  transition: box-shadow 0.2s;
+}
+
+.ab-member:hover {
+  box-shadow: var(--nm-raised);
+}
+
+.ab-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-inset);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--nm-accent);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.ab-member-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nm-text);
+}
+
+.ab-member-role {
+  font-size: 11px;
+  color: var(--nm-muted);
+  margin-top: 1px;
+}
+
+/* ─────────────────────────────
+   SHARED HERO TOKENS (copied so
+   About.css is self-contained if
+   Hero.css isn't imported)
+───────────────────────────── */
+.nm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 20px;
+  padding: 6px 14px;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nm-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nm-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.5);
+}
+
+.nm-title {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--nm-text);
+}
+
+.nm-title span { color: var(--nm-accent); }
+
+.nm-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--nm-muted);
+  max-width: 480px;
+}
+
+.nm-right {
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nm-panel-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nm-muted);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.nm-feat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.nm-feat-card {
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.nm-feat-card:hover { box-shadow: var(--nm-raised); }
+
+.nm-feat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--nm-bg);
+  box-shadow: var(--nm-raised-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--nm-accent);
+  transition: box-shadow 0.2s;
+}
+
+.nm-feat-card:hover .nm-feat-icon { box-shadow: var(--nm-inset); }
+
+.nm-feat-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--nm-text);
+}
+
+.nm-feat-desc {
+  font-size: 11px;
+  color: var(--nm-muted);
+  line-height: 1.5;
+}
+
+.nm-divider {
+  height: 1px;
+  background: rgba(197, 200, 212, 0.45);
+  margin: 18px 0;
+}
+
+.nm-cta-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nm-cta-panel-text {
+  font-size: 12px;
+  color: var(--nm-muted);
+}
+
+.nm-cta-panel-text strong {
+  color: var(--nm-text);
+  font-weight: 600;
+}
+
+.nm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+@media (max-width: 860px) {
+  .ab-split {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-left {
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ab-root {
+    padding: 20px 14px;
+  }
+
+  .nm-feat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ab-tl-left {
+    width: 44px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nm-feat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-tl-item {
+    gap: 14px;
+  }
+}
