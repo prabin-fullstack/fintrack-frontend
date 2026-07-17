@@ -1,16 +1,54 @@
-# React + Vite
+# Fintrack — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React.js frontend for **Fintrack**, a full-stack personal finance tracker.
+Connects to a Django REST Framework API with JWT authentication and a
+Neon PostgreSQL database.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://fintrack-frontend-liart.vercel.app
+🔗 **Backend Repo:** https://github.com/prabin-fullstack/fintrack-backend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- JWT-based login/register with protected routes
+- Add, edit, and delete income/expense transactions
+- Real-time balance calculation
+- Analytics dashboard — income vs. expense trends, category breakdowns
+- Multi-filter search (type, category, date)
+- Fully responsive, mobile-friendly UI
 
-## React Compiler
+## Tech Stack
+React.js · Vite · Axios · JavaScript · CSS3 · Vercel (deployment)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Folder Structure
+```
+src/
+├── components/     # Reusable UI components
+├── pages/          # Route-level views (Dashboard, Login, Transactions)
+├── services/       # Axios API calls
+├── context/        # Auth context/provider
+└── App.jsx
+```
 
-## Expanding the ESLint configuration
+## Installation
+```bash
+git clone https://github.com/prabin-fullstack/fintrack-frontend.git
+cd fintrack-frontend
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment Variables
+Create a `.env` file in the root:
+```
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+## Screenshots
+*(Add: dashboard view, login screen, mobile view)*
+
+## Future Improvements
+- Add dark mode
+- Add recurring transaction support
+- Add data export (CSV)
+
+## License
+MIT
